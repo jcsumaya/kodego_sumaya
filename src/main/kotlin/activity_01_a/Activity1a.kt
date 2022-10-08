@@ -1,5 +1,4 @@
 package activity_01_a
-
 fun main() {
     var lastName:String? = null
     var firstName:String? = null
