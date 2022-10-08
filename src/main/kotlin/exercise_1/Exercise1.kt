@@ -1,5 +1,5 @@
 package exercise_1
-import java.time.LocalDate
+
 fun main() {
     var position:String? = null
     var date:String? = null
