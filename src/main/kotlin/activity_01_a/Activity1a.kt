@@ -12,5 +12,5 @@ fun main() {
     var grade:Double? = null
     var isPresent:Boolean? = null
     var isAbsent:Boolean? = null
-    var date = Date(null)
+    var date:Date? = null
 }
