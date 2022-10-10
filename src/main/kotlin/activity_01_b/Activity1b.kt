@@ -13,7 +13,10 @@ fun main() {
         var bookYear2010s = bookYear in (2011..2020)
         var bookYear2020s = bookYear >= 2021
     var bookAuthor:String? = null
-    var isAvailable:Boolean? = null
+    var quantity:Int = readln().toInt()
+    var isAvailable = true
+    var notAvailable = false
+        if (quantity >= 1) print(isAvailable) else print(notAvailable)
     var isBorrowable:Boolean? = null
     var callNumber:Int? = null
     var studentName:String? = null
