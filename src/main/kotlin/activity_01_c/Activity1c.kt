@@ -9,7 +9,7 @@ fun main () {
         var vegetable = listOf(ginger,eggplant)
     var apple:Int? = null
     var banana:Int? = null
-        var fruits = listOf(apple,banana)
+        var fruit = listOf(apple,banana)
     var chicken:Int? = null
     var beef:Int? = null
         var meat = listOf(chicken,beef)
@@ -31,7 +31,7 @@ fun main () {
         var cosmetic = listOf(perfume,lotion)
     var television:Int? = null
     var electricFan:Int? = null
-        var appliances = listOf(television,electricFan)
+        var appliance = listOf(television,electricFan)
 
     var date:Date? = null
     var cost:Double? = null
