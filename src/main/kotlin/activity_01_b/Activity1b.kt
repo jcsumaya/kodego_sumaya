@@ -2,16 +2,17 @@ package activity_01_b
 import java.util.*
 
 fun main() {
-    var bookTitle:String? = "a".uppercase(Locale.getDefault())
+    var bookTitle:String? = "".uppercase(Locale.getDefault())
         var booksAtoF = bookTitle?.first() in 'A'..'F'
         var booksGtoL = bookTitle?.first() in 'G'..'L'
         var booksMtoR = bookTitle?.first() in 'M'..'R'
         var booksStoZ = bookTitle?.first() in 'S'..'Z'
     var bookGenre:String? = null
-    var bookYear:Int = 0
-        var bookYear2000s = bookYear in (2000..2010)
-        var bookYear2010s = bookYear in (2011..2020)
-        var bookYear2020s = bookYear >= 2021
+    var placePublished:String? = null
+    var yearPublished:Int = 0
+        var Year2000s = yearPublished in (2000..2010)
+        var Year2010s = yearPublished in (2011..2020)
+        var Year2021 = yearPublished >= 2021
     var bookAuthor:String? = null
     var quantity:Int = 0
     var isAvailable = true
