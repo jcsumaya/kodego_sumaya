@@ -1,5 +1,4 @@
 package activity_01_b
-
 import java.util.Date
 
 fun main() {
