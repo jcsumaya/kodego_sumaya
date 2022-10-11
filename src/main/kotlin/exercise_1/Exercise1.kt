@@ -1,5 +1,6 @@
 package exercise_1
 
+//Convert Application For Employment to Kotlin Variables
 fun main() {
     var position:String? = null
     var date:String? = null
