@@ -1,7 +1,5 @@
 package activity_01_d
 
-import kotlin.system.exitProcess
-
 //Create an application that will accept 5 monetary amounts.
 //After the input is done, the user will be asked “Divide the value by how many?”.
 // It will only accept an Integer as input.
