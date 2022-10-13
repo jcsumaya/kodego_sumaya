@@ -59,7 +59,7 @@ fun main() {
         }
 
     var totalAmount = amount1 + amount2 + amount3 + amount4 + amount5
-    var sum = totalAmount.div(divisor)
+    var quotient = totalAmount.div(divisor)
 
-    println("Answer: $sum")
+    println("Answer: $quotient")
 }
