@@ -51,7 +51,7 @@ fun main() {
             }
 
     print("Divide the value by how many? ")
-        var divisor= readln().toIntOrNull()
+        var divisor = readln().toIntOrNull()
             if (divisor == null){
                 do{
                     print("Please input a valid integer: ")
