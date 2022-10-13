@@ -7,21 +7,61 @@ package activity_01_d
 //Note: Error checking must be done.
 
 fun main() {
-    var amount:Int? = null
-    println("Input 5 monetary amounts:")
-        amount = readln().toInt()
-        amount += readln().toInt()
-        amount += readln().toInt()
-        amount += readln().toInt()
-        amount += readln().toInt()
+    println("INPUT 5 MONETARY AMOUNTS")
 
-    print("Divide the value by how many?: ")
-        var divisor = readln().toIntOrNull()
-            if (divisor == null) {
-                print ("Please input a valid integer next time.")
+    print("Input first amount: ")
+        var amount1 = readln().toDoubleOrNull()
+            if (amount1 == null){
+                do{
+                    print("Please input a valid Amount #1: ")
+                    amount1 = readln().toDoubleOrNull()
+                }while (amount1 == null)
             }
-            else {
-                var sum = amount.div(divisor)
-                print("Answer: $sum")
+    print("Input second amount: ")
+        var amount2 = readln().toDoubleOrNull()
+            if (amount2 == null){
+                do{
+                    print("Please input a valid Amount #2: ")
+                    amount2 = readln().toDoubleOrNull()
+                }while (amount2 == null)
             }
+    print("Input third amount: ")
+        var amount3 = readln().toDoubleOrNull()
+            if (amount3 == null){
+                do{
+                    print("Please input a valid Amount #3: ")
+                    amount3 = readln().toDoubleOrNull()
+                }while (amount3 == null)
+            }
+    print("Input fourth amount: ")
+        var amount4 = readln().toDoubleOrNull()
+            if (amount4 == null){
+                do{
+                    print("Please input a valid Amount #4: ")
+                    amount4 = readln().toDoubleOrNull()
+                }while (amount4 == null)
+            }
+    print("Input fifth amount: ")
+        var amount5 = readln().toDoubleOrNull()
+            if (amount5 == null){
+                do{
+                    print("Please input a valid Amount #5: ")
+                    amount5 = readln().toDoubleOrNull()
+                }while (amount5 == null)
+            }
+
+    print("Divide the value by how many? ")
+        var divisor= readln().toDoubleOrNull()
+            if (divisor == null){
+                do{
+                    print("Please input a valid number: ")
+                    divisor = readln().toDoubleOrNull()
+                }while (divisor == null)
+            }
+
+    var totalAmount = amount1 + amount2 + amount3 + amount4 + amount5
+
+    var sum = totalAmount.div(divisor)
+                println("Answer: $sum")
+
 }
