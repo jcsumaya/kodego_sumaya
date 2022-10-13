@@ -10,58 +10,56 @@ fun main() {
     println("INPUT 5 MONETARY AMOUNTS")
 
     print("Input first amount: ")
-        var amount1 = readln().toIntOrNull()
-            if (amount1 == null){
-                do{
-                    print("Please input a valid integer: ")
-                    amount1 = readln().toIntOrNull()
-                }while (amount1 == null)
-            }
+    var amount1 = readln().toIntOrNull()
+        if (amount1 == null){
+            do{
+                print("Please input a valid integer: ")
+                amount1 = readln().toIntOrNull()
+            }while (amount1 == null)
+        }
     print("Input second amount: ")
-        var amount2 = readln().toIntOrNull()
-            if (amount2 == null){
-                do{
-                    print("Please input a valid integer: ")
-                    amount2 = readln().toIntOrNull()
-                }while (amount2 == null)
-            }
+    var amount2 = readln().toIntOrNull()
+        if (amount2 == null){
+            do{
+                print("Please input a valid integer: ")
+                amount2 = readln().toIntOrNull()
+            }while (amount2 == null)
+        }
     print("Input third amount: ")
-        var amount3 = readln().toIntOrNull()
-            if (amount3 == null){
-                do{
-                    print("Please input a valid integer: ")
-                    amount3 = readln().toIntOrNull()
-                }while (amount3 == null)
-            }
+    var amount3 = readln().toIntOrNull()
+        if (amount3 == null){
+            do{
+                print("Please input a valid integer: ")
+                amount3 = readln().toIntOrNull()
+            }while (amount3 == null)
+        }
     print("Input fourth amount: ")
-        var amount4 = readln().toIntOrNull()
-            if (amount4 == null){
-                do{
-                    print("Please input a valid integer: ")
-                    amount4 = readln().toIntOrNull()
-                }while (amount4 == null)
-            }
+    var amount4 = readln().toIntOrNull()
+        if (amount4 == null){
+            do{
+                print("Please input a valid integer: ")
+                amount4 = readln().toIntOrNull()
+            }while (amount4 == null)
+        }
     print("Input fifth amount: ")
-        var amount5 = readln().toIntOrNull()
-            if (amount5 == null){
-                do{
-                    print("Please input a valid integer: ")
-                    amount5 = readln().toIntOrNull()
-                }while (amount5 == null)
-            }
-
+    var amount5 = readln().toIntOrNull()
+        if (amount5 == null){
+            do{
+                print("Please input a valid integer: ")
+                amount5 = readln().toIntOrNull()
+            }while (amount5 == null)
+        }
     print("Divide the value by how many? ")
-        var divisor = readln().toIntOrNull()
-            if (divisor == null){
-                do{
-                    print("Please input a valid integer: ")
-                    divisor = readln().toIntOrNull()
-                }while (divisor == null)
-            }
+    var divisor = readln().toIntOrNull()
+        if (divisor == null){
+            do{
+                print("Please input a valid integer: ")
+                divisor = readln().toIntOrNull()
+            }while (divisor == null)
+        }
 
     var totalAmount = amount1 + amount2 + amount3 + amount4 + amount5
-
     var sum = totalAmount.div(divisor)
-                println("Answer: $sum")
 
+    println("Answer: $sum")
 }
