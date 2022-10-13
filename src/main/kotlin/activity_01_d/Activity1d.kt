@@ -13,7 +13,7 @@ fun main() {
         var amount1 = readln().toIntOrNull()
             if (amount1 == null){
                 do{
-                    print("Please input a valid Amount #1: ")
+                    print("Please input a valid integer: ")
                     amount1 = readln().toIntOrNull()
                 }while (amount1 == null)
             }
@@ -21,7 +21,7 @@ fun main() {
         var amount2 = readln().toIntOrNull()
             if (amount2 == null){
                 do{
-                    print("Please input a valid Amount #2: ")
+                    print("Please input a valid integer: ")
                     amount2 = readln().toIntOrNull()
                 }while (amount2 == null)
             }
@@ -29,7 +29,7 @@ fun main() {
         var amount3 = readln().toIntOrNull()
             if (amount3 == null){
                 do{
-                    print("Please input a valid Amount #3: ")
+                    print("Please input a valid integer: ")
                     amount3 = readln().toIntOrNull()
                 }while (amount3 == null)
             }
@@ -37,7 +37,7 @@ fun main() {
         var amount4 = readln().toIntOrNull()
             if (amount4 == null){
                 do{
-                    print("Please input a valid Amount #4: ")
+                    print("Please input a valid integer: ")
                     amount4 = readln().toIntOrNull()
                 }while (amount4 == null)
             }
@@ -45,7 +45,7 @@ fun main() {
         var amount5 = readln().toIntOrNull()
             if (amount5 == null){
                 do{
-                    print("Please input a valid Amount #5: ")
+                    print("Please input a valid integer: ")
                     amount5 = readln().toIntOrNull()
                 }while (amount5 == null)
             }
@@ -54,7 +54,7 @@ fun main() {
         var divisor= readln().toIntOrNull()
             if (divisor == null){
                 do{
-                    print("Please input a valid number: ")
+                    print("Please input a valid integer: ")
                     divisor = readln().toIntOrNull()
                 }while (divisor == null)
             }
