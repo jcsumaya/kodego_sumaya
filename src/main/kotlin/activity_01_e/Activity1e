@@ -1,0 +1,19 @@
+ARRAY
+	1. Colors of the rainbow
+	2. Continents of the world
+	3. Parts of a body
+
+ARRAYLIST
+	1. List of characters in a game
+	2. List of programming languages
+	3. Car Brands
+
+SET
+	1. Size of a t-shirt
+	2. Batch of graduating students
+	3. Number of users performing a specific activity
+
+MAP
+	1. Student name and ID number (String, Int)
+	2. Combination lock (Int, Boolean)
+	3. Name database (String, String)
