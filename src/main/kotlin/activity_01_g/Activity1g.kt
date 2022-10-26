@@ -15,7 +15,7 @@ fun main() {
         rightCount--
         if(input[leftCount] != input[rightCount]){
             logger.info { "Not a Palindrome" }
-        }else logger.info { "This is a Palindrome" }
+        }else logger.info { "Palindrome" }
         leftCount = 0
         rightCount = 0
     }
