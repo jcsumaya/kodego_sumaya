@@ -57,11 +57,18 @@ fun main() {
             do{
                 logger.error{"Please input a valid integer: "}
                 divisor = readln().toIntOrNull()
-            }while (divisor == null)
+            }while ((divisor == null))
         }
+        if (divisor == 0){
+            do{
+            logger.error{"Cannot be divided by 0."}
+                logger.error{"Please input a valid integer: "}
+            divisor = readln().toIntOrNull()
+            }while ((divisor == 0))
+    }
 
     var totalAmount = amount1 + amount2 + amount3 + amount4 + amount5
-    var quotient = totalAmount.div(divisor)
+    var quotient = totalAmount.div(divisor!!)
 
     logger.info{"Answer: $quotient"}
 }
