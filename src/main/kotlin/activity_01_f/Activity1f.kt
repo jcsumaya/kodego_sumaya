@@ -19,7 +19,7 @@ fun main() {
                     counter++
                 }
             if (counter == 1) {
-                logger.info { "Unique Characters found in between both strings: $char" }
+                logger.info { "Unique Characters found in both strings: $char" }
             }
             counter = 0
         }
