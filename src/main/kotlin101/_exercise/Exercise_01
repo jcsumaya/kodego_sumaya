@@ -1,0 +1,109 @@
+IDLE GAME
+HINT : Read the whole exercise before answering this.
+There are parameters not explicitly mentioned.
+Make sure the code runs with out error.
+Add code to call the methods and the class you create.
+
+
+1. [30 pts] Create the appropriate classes.
+
+Create a "Character" class that will note the character's skill level (int),
+hunger level (int),
+fatigue level (init),
+total money (double),
+job,
+earn rate(double),
+date created(date),
+date last login (date).
+The character class has fixed values of minimum hunger level which is 0
+and maximum fatigue level which is 100.
+The Character has an active state which can be one of the following different statuses
+shopping,
+traveling,
+learning,
+sleeping,
+eating,
+resting,
+working,
+and active.
+The default hunger level is 100.
+The default level of fatigue is 0.
+The default status is resting.
+
+A Character Job is composed of
+payment,
+hours for the job,
+name of the job and title acquired by the character.
+
+A Character's skill is composed of a name and a level.
+The default skill level is 0. The max level of a skill is 100.
+
+2. [10 pts] Update the following functions.
+Edit the setter to set the status of the Character and print the value set.
+Edit the setter to set the character's skill level and print the value set.
+Edit the setter to set the character's total money and print the value set.
+Edit the setter to set the character's hunger level and print the value set.
+Edit the setter to set the character's fatigue level and print the value set.
+Edit the setter to set the character's earn rate and print the value set.
+Edit the setter to set the character's date last login and print the value set.
+
+Note : Use Log.D instead of print or println.
+Syntax : Log.i(<TAG>, <Item to be printed out>)
+
+3. [50 pts] Create following functions.
+Create a function that increase the hunger by a value.
+Create a function that decrease the hunger by a value and decreased the total money by a value.
+Create a function that will returns the following
+    "starved" if the hunger value is from 0 - 10
+    "Very hungry" if the hunger value is from 11 - 40
+    "Pretty hungry" if the hunger value is from 41 - 80
+    "Starting to feel hungry" if the hunger calue is form 81 - 130
+    "Satisfied" if the hunger level is 131 - 210
+    "A little full" if the hunger level is 211 - 360
+    "A little uncomfortable" if the hunger level is 361 - 480
+    "Feeling stuffed" if the hunger level is 481 - 500
+
+Create a function that increase the fatigue by a value.
+Create a function that decrease the fatigue by a value and decrease total money by a value.
+Create a function that will returns the following
+    "Alert" if the fatigue value is from 0 - 30
+    "Drowsy" if the fatigue value is from 31 - 45
+    "Too Tired" if the fatigue value is from 46 - 60
+    "Stressed" if the fatigue value is form 61 - 75
+    "Energy Emergency" if the fatigue level is 76 - 90
+    "Zombie" if the fatigue level is 91 to max value
+
+Create a function that increase a specific skill level and increases fatigue.
+Create a function that will returns the following
+    "Alert" if the fatigue value is from 0 - 30
+    "Drowsy" if the fatigue value is from 31 - 45
+    "Too Tired" if the fatigue value is from 46 - 60
+    "Stressed" if the fatigue value is form 61 - 75
+    "Energy Emergency" if the fatigue level is 76 - 90
+    "Zombie" if the fatigue level is 91 to max value
+
+Create a function that sets the Job of the Character,
+it accepts the job and updates the earn rate.
+Create a function that increases the level of a skill by a value.
+
+4. [10 pts]
+A Character can be a kid.
+A kid is aged between 0 - 17.
+A kid can not have a working status.
+When a kid increases the level of a skill,
+there is a chance to learn fast by multiplying the skill increase
+by 1.5 to 4.
+
+A Character can be a young adult.
+A young adult is aged between 18 - 30
+When a young adult, will have a new attribute called relationship status.
+The status can be available, complicated, in a relationship, polyamorous, not bothered, undisclosed, married, widowed, separated.
+If the status is in a relationship, polyamorous, or married there should be a way to know who the other characters association.
+When a kid increases the level of a skill,
+there is a chance to learn fast by multiplying the skill increase by 1.5 to 2.
+
+A Character can be an adult.
+A young adult is aged between 31 and above
+When an adult earn money, the money they earn is 5x the earnrate.
+Adults also have savings which is separate from their total money.
+When a adult increases the level of a skill, there is a chance to learn slow by multiplying the skill increase by .5 to .9
