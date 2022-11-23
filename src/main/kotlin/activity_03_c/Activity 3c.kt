@@ -14,7 +14,8 @@ fun main() {
     addToCart()
     addToCart()
     checkOut()
-
+    removeFromCart()
+    checkOut()
 }
 
 fun addToCart() {
@@ -40,5 +41,26 @@ fun checkOut(){
 }
 
 fun removeFromCart(){
-    TODO()
+    var removeItem:String
+    do{
+        print("Remove which item from cart?: ")
+        println(cartItems)
+        removeItem = readln().uppercase()
+    }while(removeItem !in cartItems.keys)
+
+    if(removeItem in cartItems.keys){
+        print("Remove how many $removeItem from cart?: ")
+        var removeItemQuantity = readln().toIntOrNull()
+            while(removeItemQuantity == null || removeItemQuantity !in 1..cartItems[removeItem]!!){
+                logger.error { "Invalid item quantity." }
+                println("$cartItems")
+                print("Remove how many $removeItem from cart?: ")
+                removeItemQuantity = readln().toIntOrNull()
+            }
+
+        cartItems[removeItem] = (cartItems[removeItem]!!).minus(removeItemQuantity)
+            if(cartItems[removeItem] == 0){
+                cartItems.remove(removeItem)
+            }
+    }
 }

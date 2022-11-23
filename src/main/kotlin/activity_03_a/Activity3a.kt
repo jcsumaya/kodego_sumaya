@@ -1,6 +1,6 @@
 package activity_03_a
 import mu.KotlinLogging
-private val logger = KotlinLogging.logger{}
+val logger = KotlinLogging.logger{}
 
 fun main() {
     var names:ArrayList<String> = ArrayList()
