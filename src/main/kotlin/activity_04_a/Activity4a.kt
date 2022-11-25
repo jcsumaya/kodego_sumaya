@@ -27,7 +27,7 @@ do {
             "2 -> WildSearch in Last Name \n" +
             "3 -> WildSearch in Nickname \n"
         )
-    var option: Int? = readln().toIntOrNull()
+    val option: Int? = readln().toIntOrNull()
     var searchFor: String
 
         when (option) {
