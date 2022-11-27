@@ -18,12 +18,12 @@ class Cart{
                     items.remove(product)
                 }
             }
+}
 
-    fun totalCost(cart: Cart) {
-        for (item in cart.items){
-            var eachItemCost = item.key.price * item.value
-            println("Total cost = $eachItemCost")
-        }
+fun totalCost(cart: Cart) {
+    for (item in cart.items){
+        var eachItemCost = item.key.price * item.value
+        println("Total cost = $eachItemCost")
     }
 }
 
@@ -35,6 +35,5 @@ fun main() {
 
     cart.addItems(apple, 3)
     cart.removeItem(apple, 2)
-    cart.totalCost(cart)
-
+    totalCost(cart)
 }
