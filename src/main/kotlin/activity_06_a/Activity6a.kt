@@ -1,8 +1,46 @@
 package activity_06_a
 
-//Using Activity 05 A
-//Create a function that will check the student's grade.
-//The function will accept an array with 10 entries only.
-// It will throw the following exceptions:
-    //if the array size is greater than 10 throw invalid input
-    //if the array contains 0 throw incomplete grades
+import java.time.Year
+import java.util.*
+import kotlin.Exception
+import kotlin.collections.ArrayList
+
+open class Person{
+    var firstName: String = ""
+    var middleName: String = ""
+    var lastName: String = ""
+    var address: String = ""
+    var birthDate = Date()
+}
+
+sealed class StudentGradeException(message: String):Exception(message){
+    class InvalidInput(message: String = "Invalid Input") : StudentGradeException(message)
+
+    class IncompleteGrades(message: String = "Incomplete Grades") : StudentGradeException(message)
+}
+
+open class Student: Person() {
+    var yearAdmitted: Year = Year.of(2000)
+    var id: String = ""
+    fun checkGrade(){
+        var grades:ArrayList<Double> = ArrayList()
+        grades.addAll(arrayListOf(90.2, 91.3, 92.2, 94.5, 96.8, 90.0, 96.4, 99.9, 93.3, 98.7))
+        println(grades)
+            if(grades.size > 10) {
+                throw StudentGradeException.InvalidInput()
+            }
+            if(grades.contains(0.0)){
+                throw StudentGradeException.IncompleteGrades()
+            }
+    }
+}
+
+fun main() {
+    var student = Student()
+
+    try {
+        student.checkGrade()
+    }catch (e: Exception){
+        e.printStackTrace()
+    }
+}
