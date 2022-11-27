@@ -13,24 +13,22 @@ open class Person{
     var birthDate = Date()
 }
 
-sealed class StudentGradeException(message: String):Exception(message){
-    class InvalidInput(message: String = "Invalid Input") : StudentGradeException(message)
-
-    class IncompleteGrades(message: String = "Incomplete Grades") : StudentGradeException(message)
-}
+class InvalidInput(message: String = "Invalid Input") : Exception(message)
+class IncompleteGrades(message: String = "Incomplete Grades") : Exception(message)
 
 open class Student: Person() {
     var yearAdmitted: Year = Year.of(2000)
     var id: String = ""
+
     fun checkGrade(){
         var grades:ArrayList<Double> = ArrayList()
-        grades.addAll(arrayListOf(90.2, 91.3, 92.2, 94.5, 96.8, 90.0, 96.4, 99.9, 93.3, 98.7))
+        grades.addAll(arrayListOf(90.2, 91.3, 92.2, 94.5, 96.8, 90.0, 96.4, 99.9, 93.3, 0.0))
         println(grades)
             if(grades.size > 10) {
-                throw StudentGradeException.InvalidInput()
+                throw InvalidInput()
             }
             if(grades.contains(0.0)){
-                throw StudentGradeException.IncompleteGrades()
+                throw IncompleteGrades()
             }
     }
 }
