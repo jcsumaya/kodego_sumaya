@@ -1,9 +1,9 @@
 package activity_05_b
-
 import java.util.*
 
 //1. A book, a magazine, a newspaper and comics inherits from a Publication class.
 // Identify the attributes and the methods for the publication.
+
 class Publication {
     var publisher: String = ""
     var placeOfPublication: String = ""
@@ -66,5 +66,4 @@ open class Author (firstName: String, middleName: String, lastName: String) {
     val lastName: String = lastName
     val birthDate: Date = Date()
 }
-
 class Illustrator(firstName: String, middleName: String, lastName: String): Author(firstName, middleName, lastName){}
