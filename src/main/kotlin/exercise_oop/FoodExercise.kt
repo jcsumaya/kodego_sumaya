@@ -89,5 +89,4 @@ fun main() {
 
 data class Customer(var address:String, var mobileNumber:String,
                     var firstName:String, var lastName:String){
-
 }

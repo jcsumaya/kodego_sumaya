@@ -1,7 +1,28 @@
 package activity_04_b
 
+import activity_03_a.upperCase
 import java.util.Date
 
+open class Author (firstName: String, middleName: String, lastName: String) {
+    val firstName: String = firstName
+    val middleName: String = middleName
+    val lastName: String = lastName
+    val birthDate: Date = Date()
+}
+
+class Illustrator(firstName: String, middleName: String, lastName: String): Author(firstName, middleName, lastName){}
+
+class Article(title: String, author: Author){
+    val title: String = title
+    val author: Author = author
+    var content: String = ""
+}
+
+class Publisher(name: String) {
+    val name: String = name
+    var address: String = ""
+    var dateEstablished: Date = Date()
+}
 class Book(title: String, author: Author){
     var title: String = title
     var author: Author = author
@@ -30,27 +51,12 @@ class Newspaper(name: String){
     var articles: ArrayList<Article> = ArrayList()
 }
 
-open class Author (firstName: String, middleName: String, lastName: String) {
-    val firstName: String = firstName
-    val middleName: String = middleName
-    val lastName: String = lastName
-    val birthDate: Date = Date()
-}
-
 class Comics(title: String, illustrators: Illustrator){
     var title:String = title
     var monthPublished: Date = Date()
     var yearPublished: Date = Date()
     var illustrators: ArrayList<Illustrator> = arrayListOf(illustrators)
     var publisher: Publisher = Publisher("")
-}
-
-class Illustrator(firstName: String, middleName: String, lastName: String): Author(firstName, middleName, lastName){}
-
-class Article(title: String, author: Author){
-    val title: String = title
-    val author: Author = author
-    var content: String = ""
 }
 
 class AudioVideoRecording(title: String) {
@@ -62,14 +68,20 @@ class AudioVideoRecording(title: String) {
     var hasAudio: Boolean = false
 }
 
-class Publisher(name: String) {
-    val name: String = name
-    var address: String = ""
-    var dateEstablished: Date = Date()
-}
-
 // Create a search function to search for the title of a magazine, newspaper, comics.
 // Create a function that will list the name of the magazine, newspaper, comics or book, author has written in.
 
-fun search(){
+fun searchTitle() {
+    var magazine = Magazine("BizNews", Author("Cha", "Tuk", "Chak"))
+    var newspaper = Newspaper("Rapple")
+    var comics = Comics("Marvel", Illustrator("Stan", "See", "Lee"))
+
+    var titleList = arrayListOf(magazine.title, newspaper.name, comics.title).upperCase()
+    print("Search for title of magazine, newspaper, comics: ")
+    var searchTitle = readln().uppercase()
+    var match = ArrayList<String>()
+        if (searchTitle in titleList) {
+            match.add(searchTitle)
+            println ("Found: $match")
+        }
 }
