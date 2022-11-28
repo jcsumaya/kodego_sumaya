@@ -20,14 +20,12 @@ open class Student: Person() {
     var yearAdmitted: Year = Year.of(2000)
     var id: String = ""
 
-    fun checkGrade(){
-        var grades:ArrayList<Double> = ArrayList()
-        grades.addAll(arrayListOf(90.2, 91.3, 92.2, 94.5, 96.8, 90.0, 96.4, 99.9, 93.3, 0.0))
+    fun checkGrade(grades: ArrayList<Double>){
         println(grades)
             if(grades.size > 10) {
                 throw InvalidInput()
             }
-            if(grades.contains(0.0)){
+            if(grades.contains(0.0) || grades.size < 10){
                 throw IncompleteGrades()
             }
     }
@@ -35,9 +33,12 @@ open class Student: Person() {
 
 fun main() {
     var student = Student()
+    var grades = arrayListOf(90.2, 91.3, 92.2, 94.5, 96.8, 90.0, 96.4, 99.9, 93.3, 70.0)
+    var grades2 = arrayListOf(90.2, 91.3, 92.2, 94.5, 96.8, 90.0, 96.4, 99.9, 93.3, 97.0, 87.0)
 
     try {
-        student.checkGrade()
+        student.checkGrade(grades)
+        student.checkGrade(grades2)
     }catch (e: Exception){
         e.printStackTrace()
     }
