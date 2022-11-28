@@ -1,11 +1,9 @@
 package activity_06_b
 
-import java.util.*
 import kotlin.collections.ArrayList
 
 fun main() {
     var bookLibrary: ArrayList<Book> = ArrayList()
-    var reader = Reader()
     bookLibrary.addAll(arrayListOf(
         Book("Noli Me Tangere", Author("Jose Rizal")),
         Book("The Great Gatsby", Author("F. Scott Fitzgerald")),
@@ -18,7 +16,7 @@ fun main() {
     bookLibrary[0].reserved = true
     bookLibrary[1].damaged = true
     bookLibrary[5].internalUseOnly = true
-//    reader.hasUnpaidDues
+
 
     try{
         borrowBook(bookLibrary)
@@ -37,7 +35,7 @@ class Book(var title: String, var author: Author){
 
 class Reader{
     var booksBorrowed: ArrayList<Book> = ArrayList()
-    var hasUnpaidDues: Boolean = true
+    var hasUnpaidDues: Boolean = false
 }
 
 sealed class BorrowException(message: String) : Exception(message){
