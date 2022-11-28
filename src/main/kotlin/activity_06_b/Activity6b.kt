@@ -5,6 +5,7 @@ import kotlin.collections.ArrayList
 
 fun main() {
     var bookLibrary: ArrayList<Book> = ArrayList()
+    var reader = Reader()
     bookLibrary.addAll(arrayListOf(
         Book("Noli Me Tangere", Author("Jose Rizal")),
         Book("The Great Gatsby", Author("F. Scott Fitzgerald")),
@@ -14,9 +15,10 @@ fun main() {
         Book("The Adventures of Huckleberry Finn", Author("Mark Twain")),
     ))
 
-    bookLibrary[1].reserved = true
-    bookLibrary[0].damaged = true
+    bookLibrary[0].reserved = true
+    bookLibrary[1].damaged = true
     bookLibrary[5].internalUseOnly = true
+//    reader.hasUnpaidDues
 
     try{
         borrowBook(bookLibrary)
@@ -35,7 +37,7 @@ class Book(var title: String, var author: Author){
 
 class Reader{
     var booksBorrowed: ArrayList<Book> = ArrayList()
-    var hasUnpaidDues: Boolean = false
+    var hasUnpaidDues: Boolean = true
 }
 
 sealed class BorrowException(message: String) : Exception(message){
@@ -80,7 +82,7 @@ fun borrowBook(fromBookLibrary: ArrayList<Book>) {
                 throw BorrowException.DamagedBook()
             }
         }
-    }while(reader.booksBorrowed.size != 6)
+    }while(reader.booksBorrowed.size != 5)
 
     println("BORROWED BOOKS: ")
         for (books in reader.booksBorrowed) {
