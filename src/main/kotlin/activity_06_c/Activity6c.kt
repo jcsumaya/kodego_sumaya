@@ -1,10 +1,4 @@
 package activity_06_c
-
-//When a customer checks out an item, identify the possible scenarios
-//where a cart can not be checked out properly.
-//Name at least 5 scenarios.
-//Create a function that will check the cart for the exceptions.
-
  /*
     * Item is out of stock; stockQuantity = 0
     * Item is currently reserved; reservedItem = true
@@ -14,33 +8,32 @@ package activity_06_c
  */
 
 fun main() {
-    var cart = Cart()
     var wallet = UserWallet()
     var items: HashMap<Int, Double> = HashMap()
     var paymentMethod = PaymentMethod()
     var voucher = Voucher()
 
-    var sampleItem1 = Cart.Item()
+    var sampleItem1 = Item()
         sampleItem1.price = 2.0
-        sampleItem1.stockQuantity = 5
-        sampleItem1.reserved = false
+        sampleItem1.stockQuantity = 1
+        sampleItem1.reserved = true
 
-    var sampleItem2 = Cart.Item()
+    var sampleItem2 = Item()
         sampleItem2.price = 5.0
-        sampleItem2.stockQuantity = 2
+        sampleItem2.stockQuantity = 10
         sampleItem2.reserved = false
 
     items.put(sampleItem1.stockQuantity, sampleItem1.price)
     items.put(sampleItem2.stockQuantity, sampleItem2.price)
 
     try{
-        cart.checkItemStatus(sampleItem1)
+        Item().checkStatus(sampleItem1)
     }catch (e: Exception){
         e.printStackTrace()
     }
 
-//    cart.checkItemStatus(sampleItem)
-//    wallet.purchase(sampleItem)
+//    Item().checkStatus(sampleItem)
+//    wallet.purchase(sampleItem, 1)
 //    paymentMethod.status(CurrentStatus.LOADING)
 //    voucher.checkValidity("takeTWO")
 }
@@ -50,14 +43,14 @@ class UserWallet {
 
     class InsufficientBalance(message: String = "Wallet has insufficient balance.") : Exception(message)
 
-    fun purchase(item: Cart.Item, howMany: Int){
+    fun purchase(item: Item, howMany: Int){
         balance -= (item.price * howMany)
             if (balance < 0.0) {
                 throw InsufficientBalance()
             }
         item.stockQuantity -= howMany
             if(item.stockQuantity < 0){
-                throw Cart.UnavailableItem.ItemNoStock()
+                throw Item.NoStock()
             }
         println("Remaining Balance: $balance")
     }
@@ -96,21 +89,18 @@ class PaymentMethod{
 
 }
 
-class Cart {
-    sealed class UnavailableItem(message: String) :Exception (message){
-        class ItemNoStock(message: String = "Item is out of stock.") : UnavailableItem(message)
-        class ReservedItem(message: String = "Item is currently reserved.") : UnavailableItem(message)
-    }
-
-    class Item{
+class Item {
         var stockQuantity: Int = 0
         var price: Double = 0.0
         var reserved: Boolean = true
-    }
 
-    fun checkItemStatus(item: Item){
+    class NoStock(message: String = "Item is out of stock.") : Exception(message)
+
+    class Reserved(message: String = "Item is currently reserved.") : Exception(message)
+
+    fun checkStatus(item: Item){
         if(item.reserved){
-            throw UnavailableItem.ReservedItem()
+            throw Item.Reserved()
         }
     }
 }
