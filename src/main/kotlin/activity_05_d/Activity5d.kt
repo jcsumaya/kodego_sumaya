@@ -32,6 +32,7 @@ class Dice {
     }
 }
 
+//ABSTRACTION
 abstract class GenerateGameBoard(board: Board){
     protected var size = Array<String>(100){""}
 
