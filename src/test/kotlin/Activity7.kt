@@ -7,9 +7,9 @@ internal class CartChecker {
     /*
  * Item is out of stock; stockQuantity <= 0
  * Item is currently reserved; reservedItem = true
- * Wallet has insufficient balance; walletBalance < itemPrice
  * Payment method not available; enum class paymentMethods status = Offline
  * Voucher invalid; inputVoucher !in voucherList
+ * Wallet has insufficient balance; walletBalance < itemPrice
     */
 
     @Test
